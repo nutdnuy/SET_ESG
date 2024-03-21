@@ -9,6 +9,7 @@ import os
 import sys
 import pandas as pd
 from pdfminer.high_level import extract_text
+from dotenv import load_dotenv
 
 sys.path.append('/')
 load_dotenv()
