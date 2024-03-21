@@ -17,7 +17,7 @@ load_dotenv()
 from dotenv import load_dotenv
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
-assistant_id = 'asst_fVdOwRiBxwGn2K5ST19Em6qe' # financial advisor agent
+assistant_id =  os.getenv("assistant_API_KEY")
 client = OpenAI(api_key= api_key )
 st.session_state.start_chat = False
 # Initialize session state variables
