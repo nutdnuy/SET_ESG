@@ -10,9 +10,13 @@ import sys
 import pandas as pd
 from pdfminer.high_level import extract_text
 
+sys.path.append('/')
+load_dotenv()
 
-a =  "zhfT3BlbkFJfFL38GJGYTOYo7NVDVbj"
-api_key =  "sk-tMrWN3FKPpYmP18AN" +a
+# use dotenv to load environment variables
+from dotenv import load_dotenv
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
 assistant_id = 'asst_fVdOwRiBxwGn2K5ST19Em6qe' # financial advisor agent
 client = OpenAI(api_key= api_key )
 st.session_state.start_chat = False
