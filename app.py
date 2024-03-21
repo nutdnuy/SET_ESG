@@ -192,7 +192,7 @@ if st.session_state.msgs == []:
     # Chat input for the user
     prompt = st.chat_input("Please ask question about esg ", key="chat_input")
     if file : 
-        text = extract_text("y2023-sd-en.pdf")
+        text = extract_text(file)
 
 
     
