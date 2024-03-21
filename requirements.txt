@@ -10,3 +10,5 @@ pymongo
 openpyxl
 pandas
 pdfminer.six
+
+python-dotenv
