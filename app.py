@@ -44,10 +44,6 @@ P0 = st.sidebar.text_input("Who are you?")
 file = st.sidebar.file_uploader("UP load ESG one report", accept_multiple_files=False)
 
 
-    
-
-
-
 
 
 
@@ -63,7 +59,8 @@ if "trigger_assistant" not in st.session_state:
     st.session_state.trigger_assistant = False
 
 
-def summarise_agent (text ) :
+def summarise_agent ( ) :
+    text = extract_text(file )
     from pdfminer.high_level import extract_text
     # The variable 'sys_prompt' should contain the message text
     user_message = "Please summarise: " + text[:10000]
@@ -100,22 +97,6 @@ def get_G_data(symbol):
         filtered_data = df[df['Symbol'] == symbol ].iloc[-1].to_json()
     except :filtered_data =[]
     return filtered_data
-
-def summarise_agent (text) :
-    from pdfminer.high_level import extract_text
-    # The variable 'sys_prompt' should contain the message text
-    user_message = "Please summarise: " + text[:30000]
-    run1 = submit_message(assistant_id_sum, thread_id_sum , user_message)
-    run1 = wait_on_run(run1, thread_id_sum)
-    a = get_response(thread_id_sum)
-    dic = {}
-    for m in a:
-        #print(f"{m.role}: {m.content[0].text.value}")
-        dic[m.role] = m.content[0].text.value
-            
-    lst_ .append(dic['assistant'])
-    str =  ",".join(str(element) for element in lst_ )
-    return str
 
 
 
