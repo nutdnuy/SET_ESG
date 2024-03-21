@@ -12,7 +12,7 @@ from pdfminer.high_level import extract_text
 
 
 
-api_key = "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" 
+api_key =  
 assistant_id = 'asst_fVdOwRiBxwGn2K5ST19Em6qe' # financial advisor agent
 client = OpenAI(api_key= api_key )
 st.session_state.start_chat = False
